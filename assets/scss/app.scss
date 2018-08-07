@@ -1,5 +1,7 @@
 @import "colors/colors";
-@import "~svd-style";
+$output-css: true;
+$output-full: true;
+@import "~piet";
 
 @import "typography";
 pre {
@@ -10,4 +12,8 @@ pre {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   font-size: rem(14);
+}
+
+body {
+  scroll-behavior: smooth;
 }

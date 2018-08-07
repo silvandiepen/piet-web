@@ -1,10 +1,10 @@
 <template>
-<div class="modal" :class="{'modal--active': modal.active}">
-	<div class="modal__background"/>
-	<div class="modal__content">
-		<slot></slot>
+	<div class="modal" :class="{'modal--active': modal.active}">
+		<div class="modal__background" />
+		<div class="modal__content">
+			<slot></slot>
+		</div>
 	</div>
-</div>
 </template>
 <script>
 export default {
@@ -18,7 +18,7 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~svd-style/ext";
+@import "~piet";
 .modal {
 	position: fixed;
 	width: 100%;

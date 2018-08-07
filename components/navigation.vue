@@ -5,11 +5,11 @@
 		</h1>
 		<ul class="nav__list">
 			<li class="nav__item">
-				<a class="nav__link">
+				<nuxt-link to="/features" class="nav__link">
 					<span class="nav__text">
 						features
 					</span>
-				</a>
+				</nuxt-link>
 			</li>
 			<li class="nav__item">
 				<nuxt-link to="/docs" class="nav__link">
@@ -26,8 +26,8 @@
 				</nuxt-link>
 			</li>
 			<li class="nav__item">
-				<a class="nav__link button--pink">
-					<span class="nav__text">
+				<a class="nav__link">
+					<span class="nav__text button--pink">
 						install
 					</span>
 				</a>
@@ -37,7 +37,7 @@
 </template>
 
 <style lang="scss">
-@import "~svd-style/ext";
+@import "~piet";
 .nav {
 	display: block;
 	width: 100%;

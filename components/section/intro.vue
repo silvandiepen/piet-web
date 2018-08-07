@@ -3,6 +3,7 @@
    <div class="row center">
 		 <div class="column small-full medium-third">
 			 <h1>Piet</h1>
+			 <logo class="logo-element"></logo>
 			 <pre v-html="install.script">
 			 </pre>
 			 <a class="switcher" @click="switchInstall" v-html="install.or"></a>
@@ -12,7 +13,11 @@
 </template>
 
 <script>
+import Logo from "~/components/logo.vue";
 export default {
+	components: {
+		Logo
+	},
 	data() {
 		return {
 			install: {}
@@ -50,6 +55,12 @@ export default {
 		align-self: middle;
 		justify-self: center;
 	}
+	.logo-element {
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translate(0%, 0%) rotate(-10deg) scale(5);
+	}
 }
 h1 {
 	text-align: center;
@@ -57,14 +68,7 @@ h1 {
 		margin-top: 1rem;
 	}
 }
-pre {
-	display: block;
-	background-color: color(Blue, 0.1);
-	padding: 1.5rem;
-	text-align: center;
-	font-family: "Courier New", Courier, monospace;
-	font-weight: bold;
-}
+
 .switcher {
 	display: block;
 	text-align: right;

@@ -1,25 +1,25 @@
 <template>
-  <div>
+	<div>
 		<div class="row center navigation-row">
 			<div class="column small-full medium-two-third">
 				<navigation></navigation>
 			</div>
 		</div>
 		<section class="layout-page">
-		<div class="row center">
-			<div class="column small-full medium-two-third">
-			   <nuxt/>
+			<div class="row center">
+				<div class="column small-full medium-two-third">
+					<nuxt/>
+				</div>
 			</div>
-		</div>
 		</section>
-		
-	<piet-modal>
-		<h3>Install</h3>	
-		<pre>npm install piet</pre>
-		<pre>yarn add pie </pre>
-		<h4>or download</h4>
-	</piet-modal>
-  </div>
+
+		<piet-modal>
+			<h3>Install</h3>
+			<pre>npm install piet</pre>
+			<pre>yarn add pie </pre>
+			<h4>or download</h4>
+		</piet-modal>
+	</div>
 </template>
 
 <script>
@@ -35,7 +35,7 @@ export default {
 
 
 <style lang="scss">
-@import "~svd-style/ext";
+@import "~piet";
 .layout-page {
 	min-height: 100vh;
 	background-color: color(Black);
