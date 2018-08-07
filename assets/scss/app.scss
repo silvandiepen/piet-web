@@ -1,2 +1,13 @@
 @import "colors/colors";
 @import "~svd-style";
+
+@import "typography";
+pre {
+  display: block;
+  background-color: color(Blue, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: rem(14);
+}

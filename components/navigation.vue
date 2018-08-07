@@ -50,7 +50,13 @@
 		display: inline-block;
 		width: 100px;
 		padding: 2rem;
+		&,
 		a {
+			font-size: 18px;
+			line-height: 1;
+		}
+		a {
+			margin: 0;
 			text-decoration: none;
 		}
 	}
