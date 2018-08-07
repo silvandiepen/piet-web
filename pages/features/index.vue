@@ -5,7 +5,7 @@
 				<div class="example-column__content"></div>
 			</div>
 		</div>
-		<div>
+		<div class="example-tools">
 			<div>
 				<span>total columns: {{totalColumns}}</span>
 			</div>
@@ -58,32 +58,46 @@ export default {
 
 <style lang="scss">
 @import "~piet";
-.example-row {
-	outline: 2px solid color(White, 0.2);
-	border-radius: 2px;
-	padding: 1rem 0;
 
-	background-image: linear-gradient(
-		to right,
-		transparent calc(100% - 2px),
-		color(White, 0.2)
-	);
-	background-size: 4.3% 10px;
-	background-position: left top;
+.example {
+	&-row {
+		outline: 2px solid color(White, 0.2);
+		border-radius: 2px;
+		padding: 1rem 0;
+		position: relative;
 
-	.example-column {
-		padding: 0.25rem 0.5rem;
-		// background-color: color(Red, 0.5);
-		&:nth-child(even) {
-			// background-color: color(Yellow, 0.5);
-		}
-
-		&__content {
-			outline: 2px solid color(Blue, 1);
-			background-color: color(Blue, 0.5);
-			border-radius: 4px;
-			padding: 0.5rem;
-		}
+		@debug $colors;
+		background-image: linear-gradient(
+				to right,
+				transparent calc(100% - 2px),
+				color(White, 0.2)
+			),
+			linear-gradient(to right, transparent calc(100% - 2px), color(Blue, 0.2));
+		background-size: calc(100% / 6) auto, calc(100% / 6) auto;
+		background-position: left top 0, left calc(100% / 4) top 0;
+	}
+	&-column {
+		text-align: center;
+		padding: 1rem 0;
+		opacity: 0;
+		background-image: linear-gradient(
+			to right,
+			color(Red, 0.5),
+			color(Blue, 0.5)
+		);
+		// &__content {
+		// 	display: inline-block;
+		// 	border: 2px solid color(Blue, 1);
+		// 	background-color: color(Blue, 0.5);
+		// 	border-radius: 4px;
+		// 	padding: 0.5rem;
+		// }
+	}
+	&-tools {
+		background-color: color(White, 0.1);
+		margin-top: 0.5rem;
+		outline: 2px solid color(White, 0.1);
+		padding: 2rem;
 	}
 }
 </style>
