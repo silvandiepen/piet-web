@@ -1,6 +1,8 @@
 <template>
 	<nav class="nav">
-		<h1 class="nav__logo">Piet</h1>
+		<h1 class="nav__logo">
+			<nuxt-link to="/">Piet</nuxt-link>
+		</h1>
 		<ul class="nav__list">
 			<li class="nav__item">
 				<a class="nav__link">
@@ -10,18 +12,18 @@
 				</a>
 			</li>
 			<li class="nav__item">
-				<a class="nav__link">
+				<nuxt-link to="/docs" class="nav__link">
 					<span class="nav__text">
 						docs
 					</span>
-				</a>
+				</nuxt-link>
 			</li>
 			<li class="nav__item">
-				<a class="nav__link">
+				<nuxt-link to="/components" class="nav__link">
 					<span class="nav__text">
 						components
 					</span>
-				</a>
+				</nuxt-link>
 			</li>
 			<li class="nav__item">
 				<a class="nav__link button--pink">
@@ -48,6 +50,9 @@
 		display: inline-block;
 		width: 100px;
 		padding: 2rem;
+		a {
+			text-decoration: none;
+		}
 	}
 	&__list {
 		display: flex;
@@ -58,6 +63,7 @@
 	&__link {
 		display: block;
 		padding: 1.25rem 1rem;
+		text-decoration: none;
 		&:hover {
 			cursor: pointer;
 			.nav__text {

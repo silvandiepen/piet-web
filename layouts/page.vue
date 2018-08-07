@@ -1,6 +1,5 @@
 <template>
   <div>
-		<section-intro></section-intro>
 		<section class="layout-page">
 		<div class="row center">
 			<div class="column small-full medium-two-third">
@@ -24,14 +23,12 @@
 </template>
 
 <script>
-import sectionIntro from "~/components/section/intro.vue";
 import pietModal from "~/components/piet/piet-modal.vue";
 import Navigation from "~/components/navigation.vue";
 export default {
 	components: {
-		sectionIntro,
-		Navigation,
-		pietModal
+		pietModal,
+		Navigation
 	}
 };
 </script>
