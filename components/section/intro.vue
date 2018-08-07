@@ -1,0 +1,76 @@
+<template>
+  <section class="intro">
+   <div class="row center">
+		 <div class="column small-full medium-third">
+			 <h1>Piet</h1>
+			 <pre v-html="install.script">
+			 </pre>
+			 <a class="switcher" @click="switchInstall" v-html="install.or"></a>
+		 </div>
+	 </div>
+  </section>
+</template>
+
+<script>
+export default {
+	data() {
+		return {
+			install: {}
+		};
+	},
+	methods: {
+		switchInstall() {
+			if (this.install.script == "yarn add piet") {
+				this.install = {
+					script: "npm install piet",
+					or: "or Yarn?"
+				};
+			} else {
+				this.install = {
+					script: "yarn add piet",
+					or: "or npm?"
+				};
+			}
+		}
+	},
+	created() {
+		this.switchInstall();
+	}
+};
+</script>
+
+<style lang="scss">
+@import "~svd-style/ext";
+.intro {
+	height: 100vh;
+	background-color: color(White);
+	display: flex;
+
+	.center-vertical {
+		align-self: middle;
+		justify-self: center;
+	}
+}
+h1 {
+	text-align: center;
+	& + pre {
+		margin-top: 1rem;
+	}
+}
+pre {
+	display: block;
+	background-color: color(Blue, 0.1);
+	padding: 1.5rem;
+	text-align: center;
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+}
+.switcher {
+	display: block;
+	text-align: right;
+	padding: 1rem;
+	color: color(Black, 0.25);
+	font-style: italic;
+}
+</style>
+
