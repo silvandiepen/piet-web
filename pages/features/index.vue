@@ -79,19 +79,19 @@ export default {
 	&-column {
 		text-align: center;
 		padding: 1rem 0;
-		opacity: 0;
-		background-image: linear-gradient(
-			to right,
-			color(Red, 0.5),
-			color(Blue, 0.5)
-		);
-		// &__content {
-		// 	display: inline-block;
-		// 	border: 2px solid color(Blue, 1);
-		// 	background-color: color(Blue, 0.5);
-		// 	border-radius: 4px;
-		// 	padding: 0.5rem;
-		// }
+		// opacity: 0;
+		// background-image: linear-gradient(
+		// 	to right,
+		// 	color(Red, 0.5),
+		// 	color(Blue, 0.5)
+		// );
+		&__content {
+			display: inline-block;
+			border: 2px solid color(Blue, 1);
+			background-color: color(Blue, 0.5);
+			border-radius: 4px;
+			padding: 0.5rem;
+		}
 	}
 	&-tools {
 		background-color: color(White, 0.1);

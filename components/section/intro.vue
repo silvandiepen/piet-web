@@ -1,15 +1,15 @@
 <template>
-  <section class="intro">
-   <div class="row center">
-		 <div class="column small-full medium-third">
-			 <h1>Piet</h1>
-			 <logo class="logo-element"></logo>
-			 <pre v-html="install.script">
+	<section class="intro">
+		<div class="row center">
+			<div class="column small-full medium-third">
+				<h1>Piet</h1>
+				<logo class="logo-element"></logo>
+				<pre v-html="install.script">
 			 </pre>
-			 <a class="switcher" @click="switchInstall" v-html="install.or"></a>
-		 </div>
-	 </div>
-  </section>
+				<a class="switcher" @click="switchInstall" v-html="install.or"></a>
+			</div>
+		</div>
+	</section>
 </template>
 
 <script>
@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~svd-style/ext";
+@import "~piet";
 .intro {
 	height: 100vh;
 	background-color: color(White);
