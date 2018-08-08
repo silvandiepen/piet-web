@@ -42,7 +42,7 @@ export default {
 	&-logo {
 		background-color: var(--color-black);
 		display: grid;
-		border: 0.2vw solid black;
+		border: 0.2vw solid var(--color-black);
 		grid-template-columns: 12.5% 31.25% 37.5% 18.75%;
 		grid-template-rows: 6.25%;
 	}

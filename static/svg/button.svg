@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 80 80" style="enable-background:new 0 0 80 80;" xml:space="preserve">
+	<rect x="10" y="50" class="pink" width="35" height="10"/>
+	<rect x="10" y="25" class="blue" width="60" height="20"/>
+	<rect x="10" y="10" class="blue" width="20" height="10"/>
+	<polygon class="yellow" points="10,60 10,0 0,0 0,80 6,80 10,80 45,80 45,60 "/>
+	<rect class="line" width="80" height="80"/>
+	<rect x="10" y="10" class="line" width="20" height="10"/>
+	<rect x="10" y="25" class="line" width="60" height="20"/>
+	<rect x="10" y="50" class="line" width="35" height="10"/>
+	<line class="st3" x1="10" y1="0" x2="10" y2="60"/>
+	<line class="st3" x1="45" y1="50" x2="45" y2="80"/>
+	<line class="st3" x1="30" y1="0" x2="30" y2="20"/>
+	<line class="st3" x1="70" y1="0" x2="70" y2="80"/>
+</svg>

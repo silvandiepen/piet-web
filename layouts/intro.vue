@@ -1,5 +1,6 @@
 <template>
 	<div>
+		<section-intro style="--color-black: #f7f7f7; --color-yellow: white; --color-pink: white;--color-blue: white;"></section-intro>
 		<div class="row center navigation-row">
 			<div class="column small-full medium-two-third">
 				<navigation></navigation>
@@ -23,15 +24,18 @@
 </template>
 
 <script>
+import sectionIntro from "~/components/section/intro.vue";
 import pietModal from "~/components/piet/piet-modal.vue";
 import Navigation from "~/components/navigation.vue";
 export default {
 	components: {
-		pietModal,
-		Navigation
+		sectionIntro,
+		Navigation,
+		pietModal
 	}
 };
 </script>
+
 
 
 <style lang="scss">
@@ -46,4 +50,3 @@ export default {
 	position: absolute;
 }
 </style>
-

@@ -4,6 +4,7 @@ $output-full: true;
 @import "~piet";
 
 @import "typography";
+@import "input-range";
 pre {
   display: block;
   background-color: color(Blue, 0.1);
@@ -16,4 +17,42 @@ pre {
 
 body {
   scroll-behavior: smooth;
+}
+
+.page {
+  section {
+    & + section {
+      margin-top: grid(1);
+    }
+  }
+}
+
+.svg-icon {
+  border: 2px solid black;
+  path,
+  rect {
+    fill: transparent;
+    &.yellow {
+      fill: color(Yellow);
+    }
+    &.pink {
+      fill: color(Pink);
+    }
+    &.blue {
+      fill: color(Blue);
+    }
+  }
+  path,
+  rect,
+  .line,
+  line {
+    stroke: black;
+    stroke-width: 2;
+  }
+  &.nocolor {
+    path,
+    rect {
+      fill: transparent !important;
+    }
+  }
 }
