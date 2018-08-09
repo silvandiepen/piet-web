@@ -2,9 +2,8 @@
 	<div class="page page-components">
 		<h2>Components</h2>
 		<p>Besides all the scss glory, there are also some additional packages can make your development a lot faster. As far, these packages are all Vue based.</p>
-		<div class="row small-full medium-half card__row">
-
-			<div class="column card">
+		<row class="card__row">
+			<column class="card" medium="1:2">
 				<div class="card__content">
 					<icon class="card__bg nocolor" icon="modal" :original="true" />
 					<icon class="card__image" icon="modal" :original="true" />
@@ -12,9 +11,9 @@
 					<p>Modals are evil, but yeah.. you might still need them every once in a while.</p>
 					<nuxt-link class="button" to="components/modal">More info</nuxt-link>
 				</div>
-			</div>
+			</column>
 
-			<div class="column card">
+			<column class="card" medium="1:2">
 				<div class="card__content">
 					<icon class="card__bg nocolor" icon="grid" :original="true" />
 					<icon class="card__image" icon="grid" :original="true" />
@@ -22,9 +21,9 @@
 					<p>Write less code and let the code think for you. When you know the syntax, this is making it so much clearer and easier.</p>
 					<nuxt-link class="button" to="components/grid">More info</nuxt-link>
 				</div>
-			</div>
+			</column>
 
-			<div class="column card">
+			<column class="card" medium="1:2">
 				<div class="card__content">
 					<icon class="card__bg nocolor" icon="navigation" :original="true" />
 					<icon class="card__image" icon="grid" :original="true" />
@@ -32,9 +31,9 @@
 					<p>Almost, almost every website needs navigation, instead of typing your ass off. Let this component help you create easy navigation with less code and easy stylable.</p>
 					<nuxt-link class="button" to="components/navigation">More info</nuxt-link>
 				</div>
-			</div>
+			</column>
 
-			<div class="column card">
+			<column class="card" medium="1:2">
 				<div class="card__content">
 					<icon class="card__bg nocolor" icon="button" :original="true" />
 					<icon class="card__image" icon="button" :original="true" />
@@ -42,9 +41,9 @@
 					<p>Buttons are everywhere, we can create easy buttons with the button generator, but how easy would it be if we had this simple component which makes it even easier?</p>
 					<nuxt-link class="button" to="components/button">More info</nuxt-link>
 				</div>
-			</div>
+			</column>
 
-			<div class="column card">
+			<column class="card" medium="1:2">
 				<div class="card__content">
 					<icon class="card__bg nocolor" icon="forms" :original="true" />
 					<icon class="card__image" icon="forms" :original="true" />
@@ -52,8 +51,8 @@
 					<p>Creating inputs, and where do you put which tag to make it look good? Just implement the component for it and keep it clean.</p>
 					<nuxt-link class="button" to="components/forms">More info</nuxt-link>
 				</div>
-			</div>
-		</div>
+			</column>
+		</row>
 	</div>
 </template>
 <style lang="scss">

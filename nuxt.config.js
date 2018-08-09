@@ -32,6 +32,13 @@ module.exports = {
     {
       src: "~plugins/svgicon",
       ssr: true
+    },
+    {
+      src: "~plugins/piet-grid"
+    },
+    {
+      src: "~plugins/ga",
+      ssr: true
     }
   ],
   /*
