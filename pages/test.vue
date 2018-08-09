@@ -125,13 +125,13 @@
 
 <script>
 export default {
+	layout: "test",
 	data() {
 		return {
 			dummyText: "",
 			darkMode: false
 		};
-	},
-	layout: "test"
+	}
 };
 </script>
 

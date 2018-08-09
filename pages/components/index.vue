@@ -9,7 +9,7 @@
 					<icon class="card__image" icon="modal" :original="true" />
 					<h3>Modal</h3>
 					<p>Modals are evil, but yeah.. you might still need them every once in a while.</p>
-					<nuxt-link class="button" to="components/modal">More info</nuxt-link>
+					<nuxt-link class="button" to="/components/modal">More info</nuxt-link>
 				</div>
 			</column>
 
@@ -19,7 +19,7 @@
 					<icon class="card__image" icon="grid" :original="true" />
 					<h3>Grid</h3>
 					<p>Write less code and let the code think for you. When you know the syntax, this is making it so much clearer and easier.</p>
-					<nuxt-link class="button" to="components/grid">More info</nuxt-link>
+					<nuxt-link class="button" to="/components/grid">More info</nuxt-link>
 				</div>
 			</column>
 
@@ -29,7 +29,7 @@
 					<icon class="card__image" icon="grid" :original="true" />
 					<h3>Navigation</h3>
 					<p>Almost, almost every website needs navigation, instead of typing your ass off. Let this component help you create easy navigation with less code and easy stylable.</p>
-					<nuxt-link class="button" to="components/navigation">More info</nuxt-link>
+					<nuxt-link class="button" to="/components/navigation">More info</nuxt-link>
 				</div>
 			</column>
 
@@ -39,7 +39,7 @@
 					<icon class="card__image" icon="button" :original="true" />
 					<h3>Button</h3>
 					<p>Buttons are everywhere, we can create easy buttons with the button generator, but how easy would it be if we had this simple component which makes it even easier?</p>
-					<nuxt-link class="button" to="components/button">More info</nuxt-link>
+					<nuxt-link class="button" to="/components/button">More info</nuxt-link>
 				</div>
 			</column>
 
@@ -49,7 +49,7 @@
 					<icon class="card__image" icon="forms" :original="true" />
 					<h3>Forms</h3>
 					<p>Creating inputs, and where do you put which tag to make it look good? Just implement the component for it and keep it clean.</p>
-					<nuxt-link class="button" to="components/forms">More info</nuxt-link>
+					<nuxt-link class="button" to="/components/forms">More info</nuxt-link>
 				</div>
 			</column>
 		</row>

@@ -321,7 +321,7 @@ export default {
 		}
 	},
 	created() {
-		console.log(buttonData);
+		// console.log(buttonData);
 		this.button = buttonData.button;
 		this.icons = iconBasic.iconset.basic[0];
 	},

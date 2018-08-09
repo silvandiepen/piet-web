@@ -34,11 +34,12 @@ module.exports = {
       ssr: true
     },
     {
-      src: "~plugins/piet-grid"
+      src: "~plugins/piet-grid",
+      ssr: true
     },
     {
       src: "~plugins/ga",
-      ssr: true
+      ssr: false
     }
   ],
   /*
