@@ -1,0 +1,35 @@
+pre {
+  display: block;
+  background-color: color(Blue, 0.1);
+  border: 1px solid color(Blue, 0.2);
+  padding: 1.5rem;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 400;
+  font-size: rem(14);
+  text-align: left;
+  line-height: 2;
+}
+
+p,
+td {
+  code {
+    background-color: color(Blue, 0.1);
+    border: 1px solid color(Blue, 0.2);
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 400;
+    font-size: rem(14);
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+  }
+}
+p,
+h2,
+h3,
+h4,
+h5 {
+  & + pre,
+  & + code {
+    margin-top: 1rem;
+  }
+}

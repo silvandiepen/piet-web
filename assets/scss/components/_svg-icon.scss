@@ -1,0 +1,29 @@
+.svg-icon {
+  border: 2px solid black;
+  path,
+  rect {
+    fill: transparent;
+    &.yellow {
+      fill: color(Yellow);
+    }
+    &.pink {
+      fill: color(Pink);
+    }
+    &.blue {
+      fill: color(Blue);
+    }
+  }
+  path,
+  rect,
+  .line,
+  line {
+    stroke: black;
+    stroke-width: 2;
+  }
+  &.nocolor {
+    path,
+    rect {
+      fill: transparent !important;
+    }
+  }
+}

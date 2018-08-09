@@ -1,0 +1,26 @@
+table {
+  width: 100%;
+  &,
+  tr,
+  td {
+    background-color: color(Black);
+    border-bottom: 1px solid color(White, 0.2);
+    &.invisible {
+      opacity: 0.25;
+    }
+  }
+  tr.parent {
+    &.invisible {
+      opacity: 0.25;
+      & ~ tr.child {
+        opacity: 0.5;
+      }
+    }
+    & > td {
+      font-weight: bold;
+    }
+  }
+  tr.child td:first-child {
+    padding-left: 2rem;
+  }
+}

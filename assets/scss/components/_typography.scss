@@ -11,9 +11,14 @@ h2 {
 }
 
 h3 {
-  font-size: grid(0.8);
-  @include min-("font-size", 0.8, 32);
-  @include max-("font-size", 0.8, 60);
+  font-size: grid(0.6);
+  @include min-("font-size", 0.6, 28);
+  @include max-("font-size", 0.6, 48);
+}
+h4 {
+  font-size: grid(0.5);
+  @include min-("font-size", 0.5, 24);
+  @include max-("font-size", 0.5, 36);
 }
 
 p {
