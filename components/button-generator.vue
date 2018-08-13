@@ -15,35 +15,34 @@ div.generator
 				details(open)
 					summary Standard options
 					fieldset
-						label Text
-						input(type="text", v-model="generatedButton.text")
+						.input--field
+							label Text
+							input(type="text", v-model="generatedButton.text")
 					
 						label Size
-						//- select(v-model="generatedButton.size")
-						//- 	option(value="small") Small
-						//- 	option(value="",selected) Normal
-						//- 	option(value="large") Large
-						
 						ul.iconList
 							input-radio#size-small(
 								element="li",
 								v-model="generatedButton.size", 
-								name="generated-button-size", 										
-								class-list="input-check--nolabel input-check-text",
+								name="generated-button-size", 		
+								category="text",		 								
+								nolabel,
 								input-value="small") 
 									small Small
 							input-radio#size-normal(
 								element="li",
 								v-model="generatedButton.size", 
-								name="generated-button-size", 										
-								class-list="input-check--nolabel input-check-text",
-								input-value=""
+								name="generated-button-size", 			
+								category="text",		 							
+								nolabel,
+								input-value="",
 								selected) Normal
 							input-radio#size-large(
 								element="li",
-								v-model="generatedButton.size", 
+								v-model="generatedButton.size",
+								category="text",		 
 								name="generated-button-size", 								
-								class-list="input-check--nolabel input-check-text",
+								nolabel,
 								input-value="large") 
 									large Large
 					
@@ -60,8 +59,9 @@ div.generator
 									v-for="colorvalue, colorname in colors",
 									v-model="generatedButton.border.color", 
 									element="li",
-									name="generated-border-color", 								
-									:class-list="['input-check-color--'+colorname]",
+									name="generated-border-color", 	
+									category="color",							
+									:color="colorname",
 									:key="colorname",
 									:id="['color-'+colorname]", 
 									:input-value="colorname") {{colorname}}
@@ -80,13 +80,21 @@ div.generator
 					summary Icon
 					fieldset
 						ul.iconList
-							input-radio(:classes="['input-check--nolabel','input-check-icon--none']",:id="no-icon", name="generated-button-icon", v-model="generatedButton.icon", input-value="") &nbsp;
+							input-radio(
+								:id="no-icon", name="generated-button-icon", 
+								label=false,
+								category="icon",
+								icon="none",
+								v-model="generatedButton.icon", 
+								input-value="") &nbsp;
 							input-radio(
 								v-for="iconvalue, iconname in icons",
 								v-model="generatedButton.icon", 
 								element="li",
-								name="generated-button-icon", 								
-								:class-list="['input-check--nolabel','input-check-icon--'+iconname]",
+								name="generated-button-icon", 				
+								nolabel,
+								category="icon",
+								:icon="iconname",
 								:key="iconname",
 								:id="['icon-'+iconname]", 
 								:input-value="iconname") {{iconname}}
@@ -99,13 +107,17 @@ div.generator
 								input-group
 									input-radio#icon-left(
 										v-model="generatedButton.iconPosition", 
-										name="generated-button-position", 								
-										:class-list="['input-check--nolabel','input-check-icon--arrow-left']",
+										name="generated-button-position", 		
+										category="icon",						
+										icon="arrow-left",
+										nolabel,
 										input-value="left") Left
 									input-radio#icon-right(
 										v-model="generatedButton.iconPosition", 
-										name="generated-button-position", 								
-										:class-list="['input-check--nolabel','input-check-icon--arrow-right']",
+										name="generated-button-position", 		
+										category="icon",							
+										icon="arrow-right",
+										nolabel,
 										input-value="right") Right
 
 							div
@@ -120,8 +132,10 @@ div.generator
 								v-for="colorvalue, colorname in colors",
 								v-model="generatedButton.color", 
 								element="li",
+								:style="`--check-color: ${colorvalue};`"
 								name="generated-button-color", 								
-								:class-list="['input-check-color--'+colorname]",
+								category="color",
+								:color="colorname",
 								:key="colorname",
 								:id="['icon-'+colorname]", 
 								:input-value="colorname") {{colorname}}
@@ -129,22 +143,25 @@ div.generator
 				details(open)
 					summary misc.
 					fieldset 
-						label Rounded
-						select(v-model="generatedButton.shape")
-							option(value="",selected) Normal
-							option(value="hard") Hard
-							option(v-if="!generatedButton.iconOnly", value="round") Round
-							option(value="rounded") Rounded
+						.input--field
+							label Rounded
+							select(v-model="generatedButton.shape")
+								option(value="",selected) Normal
+								option(value="hard") Hard
+								option(v-if="!generatedButton.iconOnly", value="round") Round
+								option(value="rounded") Rounded
 
-						label Rotated
-						input(type="range",v-model="generatedButton.rotation", min="0", max="360", step="45")
-
-						label Text transform
-						input-group
-							input-radio#irtt-none(name="text-transform", v-model="generatedButton.textTransform", input-value="none") none
-							input-radio#irtt-capitalized(name="text-transform", v-model="generatedButton.textTransform", input-value="capitalized") Capitalized
-							input-radio#irtt-uppercase(name="text-transform", v-model="generatedButton.textTransform", input-value="uppercase") UPPERCASE
-							input-radio#irtt-lowercase(name="text-transform", v-model="generatedButton.textTransform", input-value="lowercase") lowercase
+						.input--field.input--range
+							label Rotated
+							input(type="range",v-model="generatedButton.rotation", min="0", max="360", step="45")
+	
+						.input--field
+							label Text transform
+							select(v-model="generatedButton.textTransform")
+								option(value="") none
+								option(value="capitalized") Capitalized
+								option(value="uppercase") UPPERCASE
+								option(value="lowercase") lowercase
 
 						label font style
 						input-group
