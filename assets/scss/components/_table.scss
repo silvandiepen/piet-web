@@ -3,8 +3,6 @@ table {
   &,
   tr,
   td {
-    background-color: color(Black);
-    border-bottom: 1px solid color(White, 0.2);
     &.invisible {
       opacity: 0.25;
     }

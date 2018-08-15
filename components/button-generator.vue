@@ -9,70 +9,76 @@ div.generator
 					button(v-if="generatedButton.shape === 'round'",:class="createdButtonClasses") 
 						span
 							span {{ generatedButton.text }} 
-	   
+		div.generator__code(v-if="example.createdButton.length > 0")
+			prism(:code="example.createdButton")
 		div.generator__tools
 			form 
 				details(open)
 					summary Standard options
 					fieldset
-						.input--field
+						input-field
 							label Text
 							input(type="text", v-model="generatedButton.text")
 					
-						label Size
-						ul.iconList
-							input-radio#size-small(
-								element="li",
-								v-model="generatedButton.size", 
-								name="generated-button-size", 		
-								category="text",		 								
-								nolabel,
-								input-value="small") 
-									small Small
-							input-radio#size-normal(
-								element="li",
-								v-model="generatedButton.size", 
-								name="generated-button-size", 			
-								category="text",		 							
-								nolabel,
-								input-value="",
-								selected) Normal
-							input-radio#size-large(
-								element="li",
-								v-model="generatedButton.size",
-								category="text",		 
-								name="generated-button-size", 								
-								nolabel,
-								input-value="large") 
-									large Large
+						input-field
+							label Size
+							ul.iconList
+								input-check#size-small(
+									element="li",
+									v-model="generatedButton.size", 
+									name="generated-button-size", 		
+									type="text",		 								
+									label="false",
+									input-value="small") 
+										small Small
+								input-check#size-normal(
+									element="li",
+									v-model="generatedButton.size", 
+									name="generated-button-size", 			
+									type="text",		 							
+									label="false",
+									input-value="",
+									selected) Normal
+								input-check#size-large(
+									element="li",
+									v-model="generatedButton.size",
+									type="text",		 
+									name="generated-button-size", 								
+									label="false",
+									input-value="large") 
+										large Large
 					
 
 				details(open)
 					summary Borders
 					fieldset
-						input-checkbox#button-border(v-model="generatedButton.border.show") Border
+						input-check#button-border(multi,v-model="generatedButton.border.show") Border
 												
 						div(v-if="generatedButton.border.show")
-							label Color 
-							ul.colorList
-								input-radio(
-									v-for="colorvalue, colorname in colors",
-									v-model="generatedButton.border.color", 
-									element="li",
-									name="generated-border-color", 	
-									category="color",							
-									:color="colorname",
-									:key="colorname",
-									:id="['color-'+colorname]", 
-									:input-value="colorname") {{colorname}}
 						
-							label Style 
-							select(v-model="generatedButton.border.style")
-								option(value="solid",selected) Solid
-								option(value="dotted") Dotted
-
-							label Width
-							input(type="range",v-model="generatedButton.border.width", min="0", max="20")
+							input-field
+								label Color 
+								ul.colorList
+									input-check(
+										v-for="colorvalue, colorname in colors",
+										v-model="generatedButton.border.color", 
+										element="li",
+										name="generated-border-color", 	
+										type="color",							
+										:color="colorname",
+										:key="colorname",
+										:id="['color-'+colorname]", 
+										:input-value="colorname") {{colorname}}
+									
+							input-field
+								label Style 
+								select(v-model="generatedButton.border.style")
+									option(value="solid",selected) Solid
+									option(value="dotted") Dotted
+									
+							input-field
+								label Width
+								input(type="range",v-model="generatedButton.border.width", min="0", max="20")
 
 
 							
@@ -80,20 +86,20 @@ div.generator
 					summary Icon
 					fieldset
 						ul.iconList
-							input-radio(
+							input-check(
 								:id="no-icon", name="generated-button-icon", 
-								label=false,
-								category="icon",
+								type="icon",
 								icon="none",
 								v-model="generatedButton.icon", 
-								input-value="") &nbsp;
-							input-radio(
+								input-value="",
+								label="false")
+							input-check(
 								v-for="iconvalue, iconname in icons",
 								v-model="generatedButton.icon", 
 								element="li",
 								name="generated-button-icon", 				
-								nolabel,
-								category="icon",
+								label="false",
+								type="icon",
 								:icon="iconname",
 								:key="iconname",
 								:id="['icon-'+iconname]", 
@@ -102,39 +108,39 @@ div.generator
 						
 						
 						.extra(v-if="generatedButton.icon !== ''")
-							div
+							input-field
 								label Icon Position
 								input-group
-									input-radio#icon-left(
+									input-check#icon-left(
 										v-model="generatedButton.iconPosition", 
 										name="generated-button-position", 		
-										category="icon",						
+										type="icon",						
 										icon="arrow-left",
-										nolabel,
+										label="false",
 										input-value="left") Left
-									input-radio#icon-right(
+									input-check#icon-right(
 										v-model="generatedButton.iconPosition", 
 										name="generated-button-position", 		
-										category="icon",							
+										type="icon",							
 										icon="arrow-right",
-										nolabel,
+										label="false",
 										input-value="right") Right
 
-							div
-								input-checkbox#icon-only(v-model="generatedButton.iconOnly") Icon only
+							input-field
+								input-check#icon-only(multi,v-model="generatedButton.iconOnly") Icon only
 
 				details(open)
 					summary Background Color
 					fieldset
 						label 
 						ul.colorList
-							input-radio(
+							input-check(
 								v-for="colorvalue, colorname in colors",
 								v-model="generatedButton.color", 
 								element="li",
 								:style="`--check-color: ${colorvalue};`"
 								name="generated-button-color", 								
-								category="color",
+								type="color",
 								:color="colorname",
 								:key="colorname",
 								:id="['icon-'+colorname]", 
@@ -143,7 +149,7 @@ div.generator
 				details(open)
 					summary misc.
 					fieldset 
-						.input--field
+						input-field
 							label Rounded
 							select(v-model="generatedButton.shape")
 								option(value="",selected) Normal
@@ -151,39 +157,34 @@ div.generator
 								option(v-if="!generatedButton.iconOnly", value="round") Round
 								option(value="rounded") Rounded
 
-						.input--field.input--range
+						input-field(type="range")
 							label Rotated
 							input(type="range",v-model="generatedButton.rotation", min="0", max="360", step="45")
 	
-						.input--field
+						input-field
 							label Text transform
 							select(v-model="generatedButton.textTransform")
 								option(value="") none
 								option(value="capitalized") Capitalized
 								option(value="uppercase") UPPERCASE
 								option(value="lowercase") lowercase
+							
+						input-field
+							label font style
+							input-group
+								input-check#font-bold(multi,v-model="generatedButton.fontBold") Bold
+								input-check#font-italic(multi,v-model="generatedButton.fontItalic") Italic
 
-						label font style
-						input-group
-							input-checkbox#font-bold(v-model="generatedButton.fontBold") Bold
-							input-checkbox#font-italic(v-model="generatedButton.fontItalic") Italic
-		pre(v-highlightjs="example.createdButton")
 		//- code-section.generator__code(:code="example.createdButton",lang="html")
 </template>
 <script>
 import colorData from "piet/data/colors-vibrant.json";
 import buttonData from "piet/data/button.json";
 import iconBasic from "piet/data/iconset-basic.json";
-import InputCheckbox from "~/components/form/input-checkbox.vue";
-import InputRadio from "~/components/form/input-radio.vue";
-import InputGroup from "~/components/form/input-group.vue";
 import Large from "~/components/html/large.vue";
 
 export default {
 	components: {
-		InputRadio,
-		InputCheckbox,
-		InputGroup,
 		Large
 	},
 	data() {
@@ -354,21 +355,15 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~svd-style/ext";
+@import "~piet";
 .button-example {
 	button {
 		transition: 0.2s;
 	}
 }
 .generator {
-	display: grid;
-	grid-template-areas:
-		"preview preview tools"
-		"code code code";
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(2, 1fr);
 	&__example {
-		grid-area: preview;
+		// grid-area: preview;
 	}
 	&__content {
 		width: 100%;
@@ -377,23 +372,35 @@ export default {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		min-height: 50vh;
 	}
 	&__tools {
-		grid-area: tools;
-		padding: 1rem;
-		padding-bottom: grid(1);
+		form {
+			display: flex;
+			flex-flow: nowrap;
+			overflow: auto;
+			padding: grid(1 2 2 2);
+			details {
+				box-shadow: grid(0.25) grid(0.5) grid(2) 0 color(Black, 0.1),
+					0px 3px 0 0 color(Black, 0.05);
+				min-width: 320px;
+				margin: 0 1rem;
+			}
+		}
 	}
 	&__code {
-		grid-area: code;
-		// grid-column: 1;
-		grid-row: 2;
+		padding: grid(1 2);
 	}
 }
 .colorList {
-	column-count: 3;
+	column-count: 2;
+	li {
+		display: block;
+	}
 }
 .iconList {
 	padding: 1rem 0;
+
 	li {
 		display: inline-block;
 		label:before {
@@ -403,7 +410,7 @@ export default {
 }
 
 details {
-	background-color: color(Blue, 0.25);
+	background-color: $color-light;
 	border-radius: 0.5rem;
 	padding: 1rem;
 	.extra {

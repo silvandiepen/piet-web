@@ -48,7 +48,8 @@ export default {
 @import "~piet";
 .intro {
 	height: 100vh;
-	background-color: color(White);
+	background-color: color(Black);
+	color: color(White);
 	display: flex;
 
 	.center-vertical {

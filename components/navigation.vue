@@ -1,5 +1,5 @@
 <template>
-	<nav class="nav">
+	<nav class="nav" :class="{'nav--dark' : darkMode}">
 		<h1 class="nav__logo">
 			<nuxt-link to="/">Piet</nuxt-link>
 		</h1>
@@ -7,34 +7,47 @@
 			<li class="nav__item">
 				<nuxt-link to="/features" class="nav__link">
 					<span class="nav__text">
-						features
+						Features
 					</span>
 				</nuxt-link>
 			</li>
 			<li class="nav__item">
 				<nuxt-link to="/docs" class="nav__link">
 					<span class="nav__text">
-						docs
+						Docs
 					</span>
 				</nuxt-link>
 			</li>
 			<li class="nav__item">
 				<nuxt-link to="/components" class="nav__link">
 					<span class="nav__text">
-						components
+						Components
+					</span>
+				</nuxt-link>
+			</li>
+			<li class="nav__item">
+				<nuxt-link to="/tools" class="nav__link">
+					<span class="nav__text">
+						Tools
 					</span>
 				</nuxt-link>
 			</li>
 			<li class="nav__item">
 				<a class="nav__link">
 					<span class="nav__text button--pink">
-						install
+						Install
 					</span>
 				</a>
 			</li>
 		</ul>
 	</nav>
 </template>
+
+<script>
+export default {
+	props: ["darkMode"]
+};
+</script>
 
 <style lang="scss">
 @import "~piet";
@@ -50,6 +63,7 @@
 		display: inline-block;
 		width: 100px;
 		padding: 2rem;
+		color: color(Black);
 		&,
 		a {
 			font-size: 18px;
@@ -80,6 +94,7 @@
 	&__text {
 		display: block;
 		padding: 0.75rem 1rem;
+		color: color(Black);
 	}
 	&:before {
 		content: "";
@@ -92,10 +107,17 @@
 		transform: translateY(-100%);
 		background-color: color(Pink, 0.25);
 	}
+	&--dark {
+		&__logo,
+		.nav__text {
+			color: color(White);
+		}
+	}
 }
 
 .button--pink {
 	.nav__text {
+		color: color(White) !important;
 		background-color: color(Pink);
 		border-radius: 4px;
 	}

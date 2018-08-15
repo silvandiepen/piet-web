@@ -22,8 +22,8 @@ module.exports = {
   loading: { color: "#3B8070" },
   plugins: [
     {
-      src: "~plugins/highlight",
-      ssr: false
+      src: "~plugins/prism",
+      ssr: true
     },
     {
       src: "~plugins/markdown",
@@ -36,6 +36,9 @@ module.exports = {
     {
       src: "~plugins/piet-grid",
       ssr: true
+    },
+    {
+      src: "~plugins/piet-forms"
     },
     {
       src: "~plugins/ga",

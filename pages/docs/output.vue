@@ -16,10 +16,8 @@
 			<p>Piet can be full customized. Setting custom settings can be done by altering the default before the actual import of Piet.</p>
 			<p>You need to import the 'custom-output' script before, this script will give you all default settings which you can override using the
 				<code>set-output</code> function</p>
-			<pre v-highlightjs>
-@import '~piet/custom-output';
-$output: set-output(button,true);
-@import '~piet';</pre>
+			<prism>
+				@import '~piet/custom-output'; $output: set-output(button,true); @import '~piet';</prism>
 			<h3>Default output settings</h3>
 
 			<table v-if="outputs">
@@ -108,33 +106,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="scss">
-@import "~piet";
-table {
-	width: 100%;
-	&,
-	tr,
-	td {
-		background-color: color(Black);
-		border-bottom: 1px solid color(White, 0.2);
-		&.invisible {
-			opacity: 0.25;
-		}
-	}
-	tr.parent {
-		&.invisible {
-			opacity: 0.25;
-			& ~ tr.child {
-				opacity: 0.5;
-			}
-		}
-		& > td {
-			font-weight: bold;
-		}
-	}
-	tr.child td:first-child {
-		padding-left: 2rem;
-	}
-}
-</style>

@@ -1,6 +1,6 @@
 <template>
-	<component :is="elType" :class="classes" v-if="input.id && input.name">
-		<input type="radio" :id="input.id" :name="input.name" ref="radioButton" @input="updateRadio()" :value="input.value" :selected="selected ? true : false">
+	<component :is="elType" :class="classes" v-if="input.id && input.name" :style="colorStyle">
+		<input :type="inputType" :id="input.id" :name="input.name" ref="checkButton" @input="updateCheck()" :value="input.value" :selected="selected ? true : false">
 		<label :for="input.id" :data-text="text ? text : ''">
 			<slot></slot>
 		</label>
@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-	name: "input-radio",
+	name: "input-checkbox",
 	props: [
 		"id",
 		"name",
@@ -17,13 +17,16 @@ export default {
 		"element",
 		"selected",
 		"text",
-		"category",
+		"type",
 		"color",
 		"icon",
-		"nolabel"
+		"label",
+		"multi"
 	],
 	data() {
 		return {
+			colorStyle: "",
+			inputType: "",
 			input: {
 				value: this.$props.inputValue || ""
 			},
@@ -33,7 +36,7 @@ export default {
 	},
 	created() {
 		if (this.$props.classList) {
-			this.classes.add(this.$proprs.classList);
+			this.classes.add(this.$props.classList);
 		}
 		if (this.$props.id) {
 			this.input.id = this.$props.id;
@@ -45,28 +48,40 @@ export default {
 		} else {
 			console.log("Please give the input a name");
 		}
-		if (this.$props.category) {
+		if (this.$props.type) {
 			// console.log(this.classes);
-			this.classes.push(`input--check-${this.$props.category}`);
-			if (this.$props.category == "icon") {
+			this.classes.push(`input--check-${this.$props.type}`);
+			if (this.$props.type == "icon") {
 				if (this.$props.icon) {
 					this.classes.push(`input--check-icon--${this.$props.icon}`);
 				}
 			}
-			if (this.$props.category == "color") {
+			if (this.$props.type == "color") {
 				if (this.$props.color) {
 					this.classes.push(`input--check-color--${this.$props.color}`);
+					this.colorStyle = `--check-color: ${this.$props.color}`;
 				}
 			}
+		} else {
+			if (this.$props.multi) {
+				this.classes.push(`input--checkbox`);
+			} else {
+				this.classes.push(`input--radio`);
+			}
 		}
-		if (this.$props.nolabel) {
-			console.log("hoiii");
+		if (this.$props.multi) {
+			this.inputType = "checkbox";
+		} else {
+			this.inputType = "radio";
+		}
+
+		if (this.$props.label) {
 			this.classes.push("input--check--nolabel");
 		}
 	},
 	methods: {
-		updateRadio() {
-			this.$emit("input", this.$refs.radioButton.value);
+		updateCheck() {
+			this.$emit("input", this.$refs.checkButton.value);
 		}
 	}
 };

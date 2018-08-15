@@ -6,13 +6,20 @@ $output: set-output(reset-extra, true);
 
 @import "~piet";
 
+%Shadow {
+  box-shadow: grid(0.25) grid(0.5) grid(2) 0 color(Black, 0.1),
+    0px 3px 0 0 color(Black, 0.05);
+}
+
 @import "components/typography";
 @import "components/code";
 @import "components/table";
 @import "components/svg-icon";
+@import "components/card";
 
 body {
   scroll-behavior: smooth;
+  background-color: color(White);
 }
 
 .page {
@@ -20,5 +27,15 @@ body {
     & + section {
       margin-top: grid(1);
     }
+  }
+}
+p {
+  & + .button {
+    margin-top: 2rem;
+  }
+}
+.layout-page {
+  section + section {
+    margin-top: grid(1);
   }
 }

@@ -1,0 +1,42 @@
+:root {
+  --card-padding: 2rem;
+  --card-space: 1rem;
+}
+.card {
+  // padding: 0 calc(var(--card-padding) / 2);
+
+  padding: grid(0.5);
+  @media #{$small-only} {
+    padding: 15px 30px;
+  }
+  &__row {
+    @media #{$small-only} {
+      margin: 0;
+      width: 100%;
+      padding: 0px;
+    }
+  }
+  &__content {
+    border-radius: 4px;
+    padding: var(--card-padding);
+    color: color(Black);
+    background-color: color(White);
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    @extend %Shadow;
+    pre {
+      margin-left: -1rem;
+      width: calc(100% + 2rem);
+    }
+  }
+
+  // modifiers
+
+  &--equal {
+    .card__content {
+      height: 100%;
+    }
+  }
+}

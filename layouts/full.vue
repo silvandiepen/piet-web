@@ -2,12 +2,12 @@
 	<div>
 		<div class="row center navigation-row">
 			<div class="column small-full medium-two-third">
-				<navigation dark-mode></navigation>
+				<navigation></navigation>
 			</div>
 		</div>
 		<section class="layout-page">
 			<div class="row center">
-				<div class="column small-full medium-two-third">
+				<div class="column small-full">
 					<nuxt/>
 				</div>
 			</div>
@@ -38,6 +38,7 @@ export default {
 @import "~piet";
 .layout-page {
 	min-height: 100vh;
+	background-color: color(White);
 	padding-top: grid(3);
 }
 .navigation-row {

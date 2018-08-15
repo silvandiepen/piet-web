@@ -1,0 +1,3 @@
+<template>
+	<column-example/>
+</template>
